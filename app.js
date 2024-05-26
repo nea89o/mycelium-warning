@@ -1,6 +1,6 @@
 const HYPIXEL_API_KEY =process.env.HYPIXEL_API_KEY;
 const DISCORD_WEBHOOK_URL =process.env.DISCORD_WEBHOOK_URL;
-const CHECK_INTERVAL = 60 * 10; // 10 minutes
+const CHECK_INTERVAL = parseInt(process.env.CHECK_INTERVAL); // 10 minutes
 const WARN_AFTER = 60 * 60 * 9; // 9 hours
 
 const profiles = [

@@ -19,4 +19,5 @@
     <Config Name="Hypixel API key" Target="HYPIXEL_API_KEY" Default="" Mode="" Description="Your Hypixel API key" Type="Variable" Display="always" Required="true" Mask="true"/>
 
     <Config Name="Discord WebHook URL" Target="DISCORD_WEBHOOK_URL" Default="" Mode="" Description="Where to send your pings too. Must be a webhook." Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="Check Interval" Target="CHECK_INTERVAL" Default="600" Mode="" Description="How often to query the Hypixel API" Type="Variable" Display="always" Required="false" Mask="false"/>
 </Container>
