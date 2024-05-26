@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
     <Container version="2">
     <Name>mycelium-warning</Name>
-    <Repository>nea89o/mycelium-warning</Repository>
+    <Repository>ghcr.io/nea89o/mycelium-warning</Repository>
     <Registry>ghcr.io</Registry>
     <Network>bridge</Network>
     <Privileged>false</Privileged>
