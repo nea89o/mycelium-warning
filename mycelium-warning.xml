@@ -5,7 +5,7 @@
     <Registry>ghcr.io</Registry>
     <Network>bridge</Network>
     <Privileged>false</Privileged>
-    <Support>64pFP94AWA</Support>
+    <Support>https://discord.gg/64pFP94AWA</Support>
     <Project>https://github.com/nea89o/mycelium-warning</Project>
     <Overview>Allows to spam ping alea when he is sleeping too much and risks getting mycelium cubes.</Overview>
     <WebUI>https://www.youtube.com/watch?v=dQw4w9WgXcQ</WebUI>
