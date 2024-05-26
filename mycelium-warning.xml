@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+    <Container version="2">
+    <Name>mycelium-warning</Name>
+    <Repository>nea89o/mycelium-warning</Repository>
+    <Registry>ghcr.io</Registry>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>64pFP94AWA</Support>
+    <Project>https://github.com/nea89o/mycelium-warning</Project>
+    <Overview>Allows to spam ping alea when he is sleeping too much and risks getting mycelium cubes.</Overview>
+    <WebUI>https://www.youtube.com/watch?v=dQw4w9WgXcQ</WebUI>
+    <TemplateURL>https://raw.githubusercontent.com/nea89o/mycelium-warning/master/mycelium-warning.xml</TemplateURL>
+    <Icon>https://minecraft.wiki/images/Mycelium_JE5_BE3.png</Icon>
+    <ExtraParams/>
+    <PostArgs/>
+    <DonateText>Please give me SkyBlock coins</DonateText>
+    <DonateLink>https://sky.shiiyu.moe/stats/lrg89/</DonateLink>
+
+    <Config Name="Hypixel API key" Target="HYPIXEL_API_KEY" Default="" Mode="" Description="Your Hypixel API key" Type="Variable" Display="always" Required="true" Mask="true"/>
+
+    <Config Name="Discord WebHook URL" Target="DISCORD_WEBHOOK_URL" Default="" Mode="" Description="Where to send your pings too. Must be a webhook." Type="Variable" Display="always" Required="true" Mask="true"/>
+</Container>
