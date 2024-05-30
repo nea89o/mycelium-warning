@@ -1,15 +1,18 @@
-const HYPIXEL_API_KEY =process.env.HYPIXEL_API_KEY;
-const DISCORD_WEBHOOK_URL =process.env.DISCORD_WEBHOOK_URL;
+const HYPIXEL_API_KEY = process.env.HYPIXEL_API_KEY;
+const DISCORD_WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL;
 const CHECK_INTERVAL = parseInt(process.env.CHECK_INTERVAL); // 10 minutes
 const WARN_AFTER = 60 * 60 * 9; // 9 hours
 
-const profiles = [
-  {
-    profile: "Tomato",
-    playerId: "4154a5602654493094d3497d2ad6849f",
-    ping: "281489313840103426",
-  },
-];
+const profiles = [];
+
+for (let i = 0; true; i++) {
+  if (!process.env["PROFILE" + i]) break;
+  profiles.push({
+    profile: process.env["PROFILE" + i],
+    playerId: process.env["PLAYER" + i],
+    ping: process.env["DISCORD" + i],
+  });
+}
 
 function getProfile(p) {
   return fetch(
@@ -21,7 +24,7 @@ function getProfile(p) {
     );
 }
 function warn(userid) {
-  return fetch(DISCORD_WEBHOOK_URL+"?wait=true", {
+  return fetch(DISCORD_WEBHOOK_URL + "?wait=true", {
     headers: {
       "content-type": "application/json",
     },
@@ -46,10 +49,10 @@ async function checkCollections() {
   for (i in profiles) {
     const p = profiles[i];
     const data = await getProfile(p);
-    console.log(data)
+    console.log(data);
     let collectionTotal = 0;
     for (memberid in data.members) {
-      const member = data.members[memberid]
+      const member = data.members[memberid];
       const collectionOne = member.collection?.MYCEL;
       if (collectionOne) collectionTotal += collectionOne;
     }
@@ -58,12 +61,14 @@ async function checkCollections() {
       lastCollection[i] = collectionTotal;
       lastCollectionGain[i] = Date.now();
     }
-    console.log("last: "+last)
-    console.log("current: "+collectionTotal)
+    console.log("last: " + last);
+    console.log("current: " + collectionTotal);
     if (Date.now() - lastCollectionGain[i] > WARN_AFTER * 1000) {
-      warn(p.ping).then(it => it.json()).then(console.log, console.error);
+      warn(p.ping)
+        .then((it) => it.json())
+        .then(console.log, console.error);
     }
   }
 }
 setInterval(checkCollections, CHECK_INTERVAL * 1000);
-checkCollections()
+checkCollections();

@@ -20,4 +20,17 @@
 
     <Config Name="Discord WebHook URL" Target="DISCORD_WEBHOOK_URL" Default="" Mode="" Description="Where to send your pings too. Must be a webhook." Type="Variable" Display="always" Required="true" Mask="true"/>
     <Config Name="Check Interval" Target="CHECK_INTERVAL" Default="600" Mode="" Description="How often to query the Hypixel API" Type="Variable" Display="always" Required="false" Mask="false"/>
+    
+
+    <Config Name="Minecraft UUID 1" Target="PLAYER0" Default="" Mode="" Description="The UUID of the first player you want to check for" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Profile Cutename 1" Target="PROFILE0" Default="" Mode="" Description="The profile cute name (fruit) of the first player you want to check for" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Discord iD 1" Target="DISCORD0" Default="" Mode="" Description="The discord id to ping once the mycelium levels are too high" Type="Variable" Display="always" Required="false" Mask="false"/>
+
+    <Config Name="Minecraft UUID 2" Target="PLAYER1" Default="" Mode="" Description="The UUID of the first player you want to check for" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Profile Cutename 2" Target="PROFILE1" Default="" Mode="" Description="The profile cute name (fruit) of the first player you want to check for" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Discord iD 2" Target="DISCORD1" Default="" Mode="" Description="The discord id to ping once the mycelium levels are too high" Type="Variable" Display="always" Required="false" Mask="false"/>
+
+    <Config Name="Minecraft UUID 3" Target="PLAYER2" Default="" Mode="" Description="The UUID of the first player you want to check for" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Profile Cutename 3" Target="PROFILE2" Default="" Mode="" Description="The profile cute name (fruit) of the first player you want to check for" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Discord iD 3" Target="DISCORD2" Default="" Mode="" Description="The discord id to ping once the mycelium levels are too high" Type="Variable" Display="always" Required="false" Mask="false"/>
 </Container>
