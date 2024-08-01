@@ -48,25 +48,29 @@ for (i in profiles) {
 async function checkCollections() {
   for (i in profiles) {
     const p = profiles[i];
-    const data = await getProfile(p);
-    console.log(data);
-    let collectionTotal = 0;
-    for (memberid in data.members) {
-      const member = data.members[memberid];
-      const collectionOne = member.collection?.MYCEL;
-      if (collectionOne) collectionTotal += collectionOne;
-    }
-    const last = lastCollection[i];
-    if (last !== collectionTotal) {
-      lastCollection[i] = collectionTotal;
-      lastCollectionGain[i] = Date.now();
-    }
-    console.log("last: " + last);
-    console.log("current: " + collectionTotal);
-    if (Date.now() - lastCollectionGain[i] > WARN_AFTER * 1000) {
-      warn(p.ping)
-        .then((it) => it.json())
-        .then(console.log, console.error);
+    try {
+      const data = await getProfile(p);
+      console.log(data);
+      let collectionTotal = 0;
+      for (memberid in data.members) {
+        const member = data.members[memberid];
+        const collectionOne = member.collection?.MYCEL;
+        if (collectionOne) collectionTotal += collectionOne;
+      }
+      const last = lastCollection[i];
+      if (last !== collectionTotal) {
+        lastCollection[i] = collectionTotal;
+        lastCollectionGain[i] = Date.now();
+      }
+      console.log("last: " + last);
+      console.log("current: " + collectionTotal);
+      if (Date.now() - lastCollectionGain[i] > WARN_AFTER * 1000) {
+        warn(p.ping)
+          .then((it) => it.json())
+          .then(console.log, console.error);
+      }
+    } catch (e) {
+      console.error("COULD NOTN CHECK PROFILES", e)
     }
   }
 }
